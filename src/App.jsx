@@ -1,5 +1,5 @@
 import { FunctionTester } from "./function-tester/FunctionTester";
-// import json_data from "./stories/example-data/the-example";
+// import json_data from "./stories/example-data/the-simple-example.js";
 
 function App() {
   return (

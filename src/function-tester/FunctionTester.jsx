@@ -1,3 +1,5 @@
+import { func } from "prop-types";
+
 export function FunctionTester({ fn, input, output, tests, onFinish }) {
   console.log(fn);
   console.log(input);
@@ -9,8 +11,8 @@ export function FunctionTester({ fn, input, output, tests, onFinish }) {
       <button
         onClick={() =>
           onFinish({
-            givenTests: [],
-            testResult: { achieved: 100, all: 100 },
+            givenTests: tests.map(test => [test.name, test.testFn(fn)]),
+            testResult: { achieved: doTests(tests, fn), all: 100 },
             customTests: [],
           })
         }
@@ -19,4 +21,14 @@ export function FunctionTester({ fn, input, output, tests, onFinish }) {
       </button>
     </>
   );
+}
+
+function doTests(tests, fn) {
+  let result = 0;
+  for (const test of tests) {
+    if (test.testFn(fn)) {
+      result += test.points;
+    }
+  }
+  return result;
 }

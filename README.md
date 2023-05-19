@@ -10,7 +10,7 @@
 
 ## Pontozás
 
-- [ ] Keretprogram használata (*1p*)
+- [X] Keretprogram használata (*1p*)
 - [ ] Legalább 4 komponens (*1p*)
 - [ ] A függvény megjelenítésre került (*1p*)
 
