@@ -1,5 +1,3 @@
-import { func } from "prop-types";
-
 export function FunctionTester({ fn, input, output, tests, onFinish }) {
   console.log(fn);
   console.log(input);
