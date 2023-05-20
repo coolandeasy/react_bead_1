@@ -11,17 +11,17 @@
 ## Pontozás
 
 - [X] Keretprogram használata (*1p*)
-- [ ] Legalább 4 komponens (*1p*)
+- [X] Legalább 4 komponens (*1p*)
 - [X] A függvény megjelenítésre került (*1p*)
 
 #### Előre megadott tesztek:
 
-- [ ] Az előre megadott tesztek nevei felsorolásra kerülnek (*1p*)
-- [ ] Az előre megadott tesztek egyesével futtathatók, eredményükről vizuális visszajelzést kapunk (*1p*)
-- [ ] Az előre megadott tesztek egyszerre is futtathatók, ekkor is megfelelően változnak az egyes tesztek vizuális
+- [X] Az előre megadott tesztek nevei felsorolásra kerülnek (*1p*)
+- [X] Az előre megadott tesztek egyesével futtathatók, eredményükről vizuális visszajelzést kapunk (*1p*)
+- [X] Az előre megadott tesztek egyszerre is futtathatók, ekkor is megfelelően változnak az egyes tesztek vizuális
   visszajelzései (*1p*)
-- [ ] Egy előre megadott teszt sikeres futtatásánál megjenelítésre kerül a kapott pontszám (*1p*)
-- [ ] Az összes előre megadott teszt futtatásánál megjelenik az elért összpontszám (*1p*)
+- [X] Egy előre megadott teszt sikeres futtatásánál megjenelítésre kerül a kapott pontszám (*1p*)
+- [X] Az összes előre megadott teszt futtatásánál megjelenik az elért összpontszám (*1p*)
 
 #### Egyedi tesztek:
 
@@ -47,7 +47,7 @@
 
 #### "OK" gomb
 
-- [?] Az "OK" gomb helyes működése (*1p*)
+- [X] Az "OK" gomb helyes működése (*1p*)
 
 - [ ] Felhasználóbarát működés (*1p*)
 - [ ] Igényes megjelenés (*2p*)
