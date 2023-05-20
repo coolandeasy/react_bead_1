@@ -12,7 +12,7 @@
 
 - [X] Keretprogram használata (*1p*)
 - [ ] Legalább 4 komponens (*1p*)
-- [ ] A függvény megjelenítésre került (*1p*)
+- [X] A függvény megjelenítésre került (*1p*)
 
 #### Előre megadott tesztek:
 
@@ -47,7 +47,7 @@
 
 #### "OK" gomb
 
-- [ ] Az "OK" gomb helyes működése (*1p*)
+- [?] Az "OK" gomb helyes működése (*1p*)
 
 - [ ] Felhasználóbarát működés (*1p*)
 - [ ] Igényes megjelenés (*2p*)

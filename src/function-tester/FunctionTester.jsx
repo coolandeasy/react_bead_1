@@ -1,3 +1,5 @@
+import { PremadeTestList } from "./PremadeTestsList.jsx"
+
 export function FunctionTester({ fn, input, output, tests, onFinish }) {
   console.log(fn);
   console.log(input);
@@ -6,6 +8,12 @@ export function FunctionTester({ fn, input, output, tests, onFinish }) {
   return (
     <>
       <h1>FunctionTester</h1>
+      <h2>Function:</h2>
+      <p>{fn.toString()}</p>
+      <PremadeTestList
+        tests={tests}
+
+      />
       <button
         onClick={() =>
           onFinish({
