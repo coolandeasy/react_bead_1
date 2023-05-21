@@ -29,18 +29,18 @@
 - [ ] Új egyedi teszt hozzáadása lehetséges (*1p*)
 - [ ] Egy egyedi teszt szerkeszthető (*1p*)
 - [X] Egy egyedi teszt törölhető (*1p*)
-- [ ] Egy teszt kiválasztásakor (=szerkesztésekor) megjelennek az `input` paraméterben **legfelső szinten** megadott
+- [X] Egy teszt kiválasztásakor (=szerkesztésekor) megjelennek az `input` paraméterben **legfelső szinten** megadott
   szerkezetleírásnak megfelelő mezők. (*1p*)
-- [ ] Az `input` paraméterben megadott szerkezet legfelső szintjén lévő **szöveg** típus megfelelően jelenik meg (*1p*)
-- [ ] Az `input` paraméterben megadott szerkezet legfelső szintjén lévő **szám** típus megfelelően jelenik meg (*1p*)
-- [ ] Az `input` paraméterben megadott szerkezet legfelső szintjén lévő **logikai** típus megfelelően jelenik meg (*1p*)
+- [X] Az `input` paraméterben megadott szerkezet legfelső szintjén lévő **szöveg** típus megfelelően jelenik meg (*1p*)
+- [X] Az `input` paraméterben megadott szerkezet legfelső szintjén lévő **szám** típus megfelelően jelenik meg (*1p*)
+- [X] Az `input` paraméterben megadott szerkezet legfelső szintjén lévő **logikai** típus megfelelően jelenik meg (*1p*)
 - [ ] Az `input` paraméterben megadott szerkezet legfelső szintjén lévő **tömb** típus megfelelően jelenik meg,
   lehetőség van új elemeket hozzáadni, meglévőeket szerkeszteni, törölni (*3p*)
-- [ ] Az `input` paraméterben megadott szerkezet legfelső szintjén lévő **objektum** típus megfelelően jelenik meg,
+- [X] Az `input` paraméterben megadott szerkezet legfelső szintjén lévő **objektum** típus megfelelően jelenik meg,
   látszanak az objektum mezőnevei, amelyek típusuknak megfelelően szerkeszthetők (*3p*)
 - [ ] A megjelenített űrlapmezők kitöltöttsége ellenőrzésre kerül, a hibák listában kiíródnak (*1p*)
 - [ ] A hibalista egy elemére kattintva a fókusz a megfelelő elemre ugrik (*1p*)
-- [ ] **Tetszőleges** `input` struktúra megjelenítésre kerül rekurzívan (*1p*)
+- [X] **Tetszőleges** `input` struktúra megjelenítésre kerül rekurzívan (*1p*)
 - [X] Az egyedi tesztek egyesével futtathatók, eredményükről vizuális visszajeltést kapunk (*1p*)
 - [X] Az egyedi tesztek egyszerre is futtathatók, ekkor is megfelelően változnak az egyes tesztek vizuális
   visszajelzései (*1p*)

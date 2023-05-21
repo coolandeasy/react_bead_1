@@ -1,4 +1,7 @@
-import { Button, Form } from "react-bootstrap";
+import { Button, Form, InputGroup } from "react-bootstrap";
+import { IoMdAddCircle } from "react-icons/io";
+import { HiMinusCircle } from "react-icons/hi";
+import { useState } from "react";
 
 export function CustomFormField({ name, data }) {
   let type;
@@ -11,9 +14,11 @@ export function CustomFormField({ name, data }) {
     type = data;
   }
 
-  // console.log("testing custom field data type", data, type);
+  const spacey = { margin: "8px 0 8px 0" };
+  const btnStyle = { backgroundColor: "unset", border: "unset", padding: "0 4px 0 4px", paddingLeft: "20px" };
 
   let field;
+
   switch (type) {
     case "object":
       const keys = Object.keys(data);
@@ -33,30 +38,34 @@ export function CustomFormField({ name, data }) {
       field = (
         <Form.Group>
           <h6>Array</h6>
-          <Form.Group style={{ paddingLeft: "20px" }}>
-            { data.map((item, index)=> { return (<CustomFormField key={ `array[${index}]` } name={ `array[${index}]` } data={ item } />); }) }
-          </Form.Group>
+            <Form.Group style={{ paddingLeft: "20px" }}>
+              <InputGroup>
+                { data.map((item, index)=> { return (<CustomFormField key={ `array[${index}]` } name={ `array[${index}]` } data={ item } />); }) }
+                <Button style={ btnStyle } ><HiMinusCircle style={{ color: "red" }} size={"2em"} /></Button>
+              </InputGroup>
+            </Form.Group>
+          <Button style={ btnStyle } onClick={ () => { setInner(inner.push(innerField)) } } ><IoMdAddCircle style={{ color: "green" }} size={"2em"} /></Button>
         </Form.Group>
       );
       break;
     case "boolean":
       field = (
-        <Form.Group controlId={ name } className={ "mb-3" }>
+        <Form.Group style={ spacey } controlId={ name } className={ "mb-3" }>
           <Form.Check type="switch" id={`check-${ name }`} label={ name } />
         </Form.Group>
       );
       break;
     case "number":
       field = (
-        <Form.FloatingLabel controlId={ name } label={ name }>
-          <Form.Control type="number" placeholder="number" />
+        <Form.FloatingLabel style={ spacey } controlId={ name } label={ name }>
+          <Form.Control required type="number" placeholder="number" />
         </Form.FloatingLabel>
       );
       break;
     case "string":
       field = (
-        <Form.FloatingLabel controlId={ name } label={ name }>
-          <Form.Control type="text" placeholder="string" />
+        <Form.FloatingLabel style={ spacey } controlId={ name } label={ name }>
+          <Form.Control required type="text" placeholder="string" />
         </Form.FloatingLabel>
       );
       break;
