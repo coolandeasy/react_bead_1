@@ -25,10 +25,10 @@
 
 #### Egyedi tesztek:
 
-- [ ] Az egyedi tesztek listája megjelenik, sorszámuk és neveik felsorolásával (*1p*)
+- [X] Az egyedi tesztek listája megjelenik, sorszámuk és neveik felsorolásával (*1p*)
 - [ ] Új egyedi teszt hozzáadása lehetséges (*1p*)
 - [ ] Egy egyedi teszt szerkeszthető (*1p*)
-- [ ] Egy egyedi teszt törölhető (*1p*)
+- [X] Egy egyedi teszt törölhető (*1p*)
 - [ ] Egy teszt kiválasztásakor (=szerkesztésekor) megjelennek az `input` paraméterben **legfelső szinten** megadott
   szerkezetleírásnak megfelelő mezők. (*1p*)
 - [ ] Az `input` paraméterben megadott szerkezet legfelső szintjén lévő **szöveg** típus megfelelően jelenik meg (*1p*)
@@ -41,8 +41,8 @@
 - [ ] A megjelenített űrlapmezők kitöltöttsége ellenőrzésre kerül, a hibák listában kiíródnak (*1p*)
 - [ ] A hibalista egy elemére kattintva a fókusz a megfelelő elemre ugrik (*1p*)
 - [ ] **Tetszőleges** `input` struktúra megjelenítésre kerül rekurzívan (*1p*)
-- [ ] Az egyedi tesztek egyesével futtathatók, eredményükről vizuális visszajeltést kapunk (*1p*)
-- [ ] Az egyedi tesztek egyszerre is futtathatók, ekkor is megfelelően változnak az egyes tesztek vizuális
+- [X] Az egyedi tesztek egyesével futtathatók, eredményükről vizuális visszajeltést kapunk (*1p*)
+- [X] Az egyedi tesztek egyszerre is futtathatók, ekkor is megfelelően változnak az egyes tesztek vizuális
   visszajelzései (*1p*)
 
 #### "OK" gomb
@@ -50,7 +50,7 @@
 - [X] Az "OK" gomb helyes működése (*1p*)
 
 - [ ] Felhasználóbarát működés (*1p*)
-- [ ] Igényes megjelenés (*2p*)
+- [X] Igényes megjelenés (*2p*)
 - [X] 1 hét késés (*-3p*)
 - [ ] 2 hét késés (*-6p*)
 

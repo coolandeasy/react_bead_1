@@ -5,8 +5,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
-    <>
-      <FunctionTester
+    <div id={"app"}>
+      {/*<FunctionTester
         fn={({ a, b }) => a + b}
         input={{ a: "number", b: "number" }}
         output={"number"}
@@ -17,8 +17,8 @@ function App() {
           { name: "10 + -20", testFn: (fn) => fn({ a: 10, b: -20 }) === -10, points: 25 }
         ]}
         onFinish={(result) => console.log(result)}
-      />
-      {/*<FunctionTester
+      />*/}
+      <FunctionTester
         fn={({ x, limit }) => x.filter(e => e.grade >= limit).map(e => e.name)}
         input={{ x: [{ name: "string", grade: "number" }], limit: "number" }}
         output={["string"]}
@@ -82,8 +82,8 @@ function App() {
           },
         ]}
         onFinish={result => console.log(result)}
-      />*/}
-    </>
+      />
+    </div>
   );
 }
 

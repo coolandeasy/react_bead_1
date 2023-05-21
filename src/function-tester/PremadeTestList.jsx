@@ -23,7 +23,7 @@ export function PremadeTestList({ tests, fn, setErr }) {
     <>
       <h2>Premade Tests:</h2>
       <div></div>
-      <Table style={{ width: "50%", textAlign: "center", verticalAlign: "middle" }} striped hover>
+      <Table style={{ width: "65%", textAlign: "center", verticalAlign: "middle" }} striped hover>
         <thead>
         <tr>
           <th>Name</th>
@@ -52,7 +52,7 @@ export function PremadeTestList({ tests, fn, setErr }) {
 }
 
 function checkSyntax(dict, fn) {
-  console.log(dict);
-  console.log(Object.keys(dict).every(function(k){ return dict[k] === true }));
+  // console.log(dict);
+  // console.log(Object.keys(dict).every(function(k){ return dict[k] === true }));
   fn(Object.keys(dict).every(function(k){ return dict[k] === true }));
 }
