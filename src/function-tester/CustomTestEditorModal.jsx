@@ -20,6 +20,7 @@ export function CustomTestEditorModal({ modalData }) {
     <Modal show={ state } onHide={ close }>
       <Modal.Body>
         <Form noValidate validated={ validated } onSubmit={ validateForm }>
+          <h5>Test name</h5>
           <Form.FloatingLabel
             controlId={ "testName" }
             label={ "Test name" }
@@ -27,10 +28,14 @@ export function CustomTestEditorModal({ modalData }) {
             <Form.Control
               required
               type="text"
+              placeholder={ "Test name" }
               defaultValue={ test.name }
             />
           </Form.FloatingLabel>
-          <CustomFormField />
+          <h5>Input</h5> <hr/>
+          <CustomFormField name={ "input" } data={ input } />
+          <h5>Output</h5> <hr/>
+          <CustomFormField name={ "output" } data={ output } />
           <Button type={ "submit" } variant="success">
             Save Test <FaSave size={ '1.2em' } />
           </Button>

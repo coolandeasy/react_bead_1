@@ -7,7 +7,8 @@ import { Button } from "react-bootstrap";
 export function FunctionTester({ fn, input, output, tests, onFinish }) {
   const err = {premade: true, custom: true};
   const [syntaxError, setSyntaxError] = useState(true);
-  const [customTests, changeCustomTests] = useState([{
+  const [customTests, changeCustomTests] = useState(
+    [{
     name: "empty input",
     testFn: (fn) => {
       const input = {
@@ -18,7 +19,52 @@ export function FunctionTester({ fn, input, output, tests, onFinish }) {
       return Array.isArray(output) && output.length === 0;
     },
     points: 30,
-  }]);
+  },
+    {
+      name: "one element, OK",
+      testFn: (fn) => {
+        const input = {
+          x: [{ name: "Győző", grade: 5 }],
+          limit: 5
+        };
+        const output = fn(input);
+        return Array.isArray(output) &&
+          output.length === 1 &&
+          output[0] === "Győző";
+      },
+      points: 30,
+    },
+    {
+      name: "one element, not OK",
+      testFn: (fn) => {
+        const input = {
+          x: [{ name: "Győző", grade: 4 }],
+          limit: 5
+        };
+        const output = fn(input);
+        return Array.isArray(output) &&
+          output.length === 0;
+      },
+      points: 30,
+    },
+    {
+      name: "multiple elements",
+      testFn: (fn) => {
+        const input = {
+          x: [
+            { name: "Győző", grade: 2 },
+            { name: "Dávid", grade: 4 },
+            { name: "Bendegúz", grade: 5 },
+            { name: "Imre", grade: 3 },
+          ],
+          limit: 4
+        };
+        const output = fn(input);
+        const expectedOutput = ["Dávid", "Bendegúz"];
+        return JSON.stringify(output) === JSON.stringify(expectedOutput);
+      },
+      points: 60,
+    }]);
 
   //region Modal
   const [modalState, toggleModal] = useState(false);
@@ -71,7 +117,10 @@ export function FunctionTester({ fn, input, output, tests, onFinish }) {
         <Button
           name={ "AddCustomTestButton" }
           style={{ marginBottom: "16px" }}
-          onClick={ () => handleShow() }
+          onClick={ () => {
+            setTest({});
+            handleShow();
+          } }
         >
           Add custom test
         </Button>
