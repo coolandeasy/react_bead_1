@@ -9,36 +9,44 @@ export function FunctionTester({ fn, input, output, tests, onFinish }) {
   const [syntaxError, setSyntaxError] = useState(true);
   const [customTests, changeCustomTests] = useState(
     [{
-    name: "empty input",
+    name: "Two elements, both OK",
     testFn: (fn) => {
       const input = {
-        x: [],
-        limit: 0
+        x: [
+          { name: "Győző", grade: 3 },
+          { name: "Dávid", grade: 4 },
+        ],
+        limit: 3
       };
       const output = fn(input);
-      return Array.isArray(output) && output.length === 0;
+      return Array.isArray(output) && output.length === 2;
     },
     points: 30,
   },
     {
-      name: "one element, OK",
+      name: "Two elements, one OK",
       testFn: (fn) => {
         const input = {
-          x: [{ name: "Győző", grade: 5 }],
-          limit: 5
+          x: [
+            { name: "Győző", grade: 3 },
+            { name: "Dávid", grade: 2 },
+          ],
+          limit: 3
         };
         const output = fn(input);
-        return Array.isArray(output) &&
-          output.length === 1 &&
-          output[0] === "Győző";
+        return Array.isArray(output) && output.length === 1;
       },
       points: 30,
     },
     {
-      name: "one element, not OK",
+      name: "Three elements, not OK",
       testFn: (fn) => {
         const input = {
-          x: [{ name: "Győző", grade: 4 }],
+          x: [
+            { name: "Dávid", grade: 4 },
+            { name: "Bendegúz", grade: 3 },
+            { name: "Imre", grade: 3 },
+          ],
           limit: 5
         };
         const output = fn(input);
@@ -52,15 +60,15 @@ export function FunctionTester({ fn, input, output, tests, onFinish }) {
       testFn: (fn) => {
         const input = {
           x: [
-            { name: "Győző", grade: 2 },
-            { name: "Dávid", grade: 4 },
+            { name: "Győző", grade: 4 },
+            { name: "Dávid", grade: 5 },
             { name: "Bendegúz", grade: 5 },
-            { name: "Imre", grade: 3 },
+            { name: "Imre", grade: 5 },
           ],
-          limit: 4
+          limit: 5
         };
         const output = fn(input);
-        const expectedOutput = ["Dávid", "Bendegúz"];
+        const expectedOutput = ["Dávid", "Bendegúz", "Imre"];
         return JSON.stringify(output) === JSON.stringify(expectedOutput);
       },
       points: 60,
@@ -132,10 +140,13 @@ export function FunctionTester({ fn, input, output, tests, onFinish }) {
           onClick={ () => onFinish({
             givenTests: tests.map(test => [test.name, test.testFn(fn)]),
             testResult: {
-              achieved: doTests(tests, fn),
-              all: Object.values(tests.map(test => test.points)).reduce((total, value) => total + value, 0)
+              achieved: doTests(tests, fn) + doTests(customTests, fn),
+              all: (
+                Object.values(tests.map(test => test.points)).reduce((total, value) => total + value, 0) +
+                Object.values(customTests.map(test => test.points)).reduce((total, value) => total + value, 0)
+              )
             },
-            customTests: []
+            customTests: customTests.map(test => [test.name, test.testFn(fn)])
           }) }
         > OK
         </Button>
